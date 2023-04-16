@@ -1,0 +1,73 @@
+vx@ubuntu:~$ fish
+Welcome to fish, the friendly interactive shell
+Type `help` for instructions on how to use fish
+vx@ubuntu ~> catkin_ws/
+vx@ubuntu ~/catkin_ws> cd
+vx@ubuntu ~> cd catkin_ws/src/my_robot_tutorials/src/
+vx@ubuntu ~/c/s/m/src> touch my_first_node1.cpp
+vx@ubuntu ~/c/s/m/src> vim my_first_node1.cpp 
+
+// edited code in vim my_first_node1.cpp  
+/*
+#include <ros/ros.h>
+
+int main (int argc, char **argv)
+{
+        ros::init(argc, argv, "my_first_cpp_node"); // we cannot have same name code file for cpp and python
+        ros::NodeHandle nh; //not in python
+
+        ROS_INFO("Node has been started"); // used here as a printf
+
+        ros::Duration(1.0).sleep();
+
+        ROS_INFO("EXIT");
+
+}
+*/
+vx@ubuntu ~/c/s/m/src> ls
+my_first_node1.cpp
+vx@ubuntu ~/c/s/m/src> cd ..
+vx@ubuntu ~/c/s/my_robot_tutorials> ls
+CMakeLists.txt  include/  package.xml  scripts/  src/
+vx@ubuntu ~/c/s/my_robot_tutorials> vim CMakeLists.txt
+
+
+// additonal code in vim CmakeLists.txt in my_ros_tutorials  --- add_executable(node_cpp src/my_first_node.cpp)
+// Creating a basic executable
+/*
+add_executable(node_cpp src/my_first_node.cpp)
+target_link_libraries(node_cpp  ${catkin_LIBRARIES})
+*/
+vx@ubuntu ~> cd catkin_ws/src/my_robot_tutorials/src/
+vx@ubuntu ~/c/s/m/src> ls
+my_first_node1.cpp  my_first_node.cpp
+vx@ubuntu ~/c/s/m/src> vim my_first_node.cpp
+vx@ubuntu ~/c/s/m/src> cd
+vx@ubuntu ~> cd catkin_ws/
+vx@ubuntu ~/catkin_ws> catkin_make
+vx@ubuntu ~/catkin_ws> cd
+vx@ubuntu ~> cd catkin_ws/src/my_robot_tutorials/src/
+vx@ubuntu ~/c/s/m/src> vim my_first_node.cpp
+vx@ubuntu ~/c/s/m/src> cd ..
+vx@ubuntu ~/c/s/my_robot_tutorials> ls
+CMakeLists.txt  include/  package.xml  scripts/  src/
+vx@ubuntu ~/c/s/my_robot_tutorials> ls
+CMakeLists.txt  include/  package.xml  scripts/  src/
+vx@ubuntu ~/c/s/my_robot_tutorials> cd
+vx@ubuntu ~> cd catkin_ws/
+vx@ubuntu ~/catkin_ws> ls
+build/  devel/  src/
+vx@ubuntu ~/catkin_ws> cd devel/
+vx@ubuntu ~/c/devel> ls
+cmake.lock  local_setup.bash  setup.bash       setup.zsh
+env.sh*     local_setup.sh    setup.sh         share/
+lib/        local_setup.zsh   _setup_util.py*
+vx@ubuntu ~/c/devel> cd lib/
+vx@ubuntu ~/c/d/lib> ls
+my_robot_tutorials/  pkgconfig/
+vx@ubuntu ~/c/d/lib> cd my_robot_tutorials/
+vx@ubuntu ~/c/d/l/my_robot_tutorials> ls
+node_cpp*
+vx@ubuntu ~/c/d/l/my_robot_tutorials> ./node_cpp 
+[ INFO] [1681667616.342985474]: Node has been started
+[ INFO] [1681667617.356640306]: EXIT
