@@ -42,3 +42,11 @@ x@ubuntu ~/catkin_ws> cd devel/lib/my_robot_tutorials/
 vx@ubuntu ~/c/d/l/my_robot_tutorials> ls
 node_cpp*
 vx@ubuntu ~/c/d/l/my_robot_tutorials> ./node_cpp
+
+
+
+
+vx@ubuntu ~/catkin_ws> cd devel/lib/my_robot_tutorials/
+vx@ubuntu ~/c/d/l/my_robot_tutorials> ls
+node_cpp*
+vx@ubuntu ~/c/d/l/my_robot_tutorials> ./node_cpp
