@@ -1,0 +1,57 @@
+vx@ubuntu:~$ fish
+Welcome to fish, the friendly interactive shell
+Type `help` for instructions on how to use fish
+vx@ubuntu ~> cd catkin_ws/
+vx@ubuntu ~/catkin_ws> cd src/
+vx@ubuntu ~/c/src> ls
+CMakeLists.txt@  my_robot_tutorials/
+vx@ubuntu ~/c/src> cd my_robot_tutorials/
+vx@ubuntu ~/c/s/my_robot_tutorials> cd scripts/
+vx@ubuntu ~/c/s/m/scripts> ls
+my_first_node.py*
+vx@ubuntu ~/c/s/m/scripts> touch my_first_node1.py
+vx@ubuntu ~/c/s/m/scripts> ls
+my_first_node1.py  my_first_node.py*
+vx@ubuntu ~/c/s/m/scripts> chmod +x my_first_node1.py^C
+vx@ubuntu ~/c/s/m/scripts> ls
+my_first_node1.py  my_first_node.py*
+vx@ubuntu ~/c/s/m/scripts> vim my_first_node1.py
+
+
+
+
+
+
+========================================================
+
+#!/usr/bim/env python3
+
+import rospy
+
+if __name__=='__main__':
+    rospy.init_node('my_first_python node')
+
+    rospy.loginfo('This node has been started')
+
+    rospy.sleep(1)
+
+    rospy.loginfo("Exit now")
+
+// to save the file --- :wq
+========================================================
+
+#!/usr/bim/env python3
+
+import rospy
+
+if __name__=='__main__':
+    rospy.init_node('my_first_python node')
+
+    rospy.loginfo('This node has been started')
+
+    rate = rospy.Rate(10)
+
+    while not rospy.is_shutdown():
+        rospy.loginfo("Hello")
+        rate.sleep()  # try to execute the code every 0.1 sec
+~                                                             
