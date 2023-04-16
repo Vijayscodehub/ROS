@@ -1,0 +1,44 @@
+// just a bit of code change in vim my_first_node.cpp
+
+*/
+#include <ros/ros.h>
+
+int main (int argc, char **argv)
+{
+        ros::init(argc, argv, "my_first_cpp_node"); // we cannot have same name code file for cpp and python
+        ros::NodeHandle nh; //not in python
+        ROS_INFO("Node has been started"); // used here as a printf
+
+        ros::Rate rate(10);
+        while (ros::ok()) {
+                ROS_INFO("HELLO");
+                rate.sleep();
+
+        }
+// while node is not shutdown we will continue meaning of ros::ok
+}
+*/
+vx@ubuntu ~/c/d/l/my_robot_tutorials> fish
+Welcome to fish, the friendly interactive shell
+Type `help` for instructions on how to use fish
+vx@ubuntu ~/c/d/l/my_robot_tutorials> cd
+vx@ubuntu ~> cd catkin_ws/src/my_robot_tutorials/
+vx@ubuntu ~/c/s/my_robot_tutorials> ls
+CMakeLists.txt  include/  package.xml  scripts/  src/
+vx@ubuntu ~/c/s/my_robot_tutorials> cd src/
+vx@ubuntu ~/c/s/m/src> ls
+my_first_node1.cpp  my_first_node.cpp
+vx@ubuntu ~/c/s/m/src> vim my_first_node.cpp
+vx@ubuntu ~/c/s/m/src> cd ..
+vx@ubuntu ~/c/s/my_robot_tutorials> ls
+CMakeLists.txt  include/  package.xml  scripts/  src/
+vx@ubuntu ~/c/s/my_robot_tutorials> vim CMakeLists.txt
+vx@ubuntu ~/c/s/my_robot_tutorials> cd
+vx@ubuntu ~> cd
+vx@ubuntu ~> cd catkin_ws/
+vx@ubuntu ~/catkin_ws> catkin_make
+
+x@ubuntu ~/catkin_ws> cd devel/lib/my_robot_tutorials/
+vx@ubuntu ~/c/d/l/my_robot_tutorials> ls
+node_cpp*
+vx@ubuntu ~/c/d/l/my_robot_tutorials> ./node_cpp
