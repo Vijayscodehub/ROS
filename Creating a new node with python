@@ -55,3 +55,4 @@ if __name__=='__main__':
         rospy.loginfo("Hello")
         rate.sleep()  # try to execute the code every 0.1 sec
 ~                                                             
+python3  my_first_node1.py
